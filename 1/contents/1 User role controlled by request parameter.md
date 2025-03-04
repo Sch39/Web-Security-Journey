@@ -1,0 +1,16 @@
+1. Open and start new session with burp suite, click proxy->open browser. Access all link in above with this browser
+2. Access link [https://portswigger.net](https://portswigger.net/) and login to your account(or create if don't have)
+3. Access link [here](https://portswigger.net/web-security/access-control/lab-user-role-controlled-by-request-parameter)
+4. Click button ACCESS THE LAB
+5. Copy credential login
+6. Open the lab page
+7. Login with credential given
+8. Access /admin url
+9. Click Intercept in burp suite to enable it
+10. Reload the lab page
+11. Choose the right request in burp suite and click forward(or you can forward all), in cookie you can see if the web use query Admin to identified access rule(Admin=false)
+12. Then you will be see text "Admin interface only available if logged in as an administrator" in lab page
+13. Disable intercept
+14. In burp suite click Match and Replace -> add (Http match and replace rules) then fill then input "Match" with "Admin=false" and the input "Replace" with "Admin=true", click ok
+15. Reload lab page, delete carlos user
+16. Done
